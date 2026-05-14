@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "source": "Mandatory fields identified from red asterisks on the original OAR form.",
+    "rule": "The app highlights these fields until filled. The exported packet remains raw material; AI form generation still reports missing information after processing."
+  },
+  "fields": {
+    "client.first_name": {"label": "Required: Client first name", "form": "OAR and Timeliness"},
+    "client.last_name": {"label": "Required: Client last name", "form": "OAR and Timeliness"},
+    "client.dob": {"label": "Required: DOB", "form": "OAR and Timeliness"},
+    "client.ethnicity_options": {"label": "Required on OAR: Client ethnicity", "form": "OAR Psychotherapy"},
+    "insurance.medi_cal_cin": {"label": "Required: Medi-Cal number", "form": "OAR and Timeliness"},
+    "clinical.request_type": {"label": "Required on OAR: Request type", "form": "OAR Psychotherapy"},
+    "clinical.primary_diagnosis": {"label": "Required on OAR: Primary DSM/ICD Diagnosis with Specifier", "form": "OAR Psychotherapy"},
+    "clinical.current_symptoms": {"label": "Required on OAR: Current Symptoms", "form": "OAR Psychotherapy"},
+    "clinical.problem_list_status": {"label": "Required on OAR: Problem List Status", "form": "OAR Psychotherapy"},
+    "clinical.problem_list_date": {"label": "Required on OAR: Problem List Date", "form": "OAR Psychotherapy"},
+    "clinical.significant_impairment": {"label": "Required on OAR: Explain Significant Impairment", "form": "OAR Psychotherapy"},
+    "clinical.substance_use": {"label": "Required on OAR: Substance Use", "form": "OAR Psychotherapy"},
+    "clinical.risk.suicidal": {"label": "Required on OAR: Suicidal Risk", "form": "OAR Psychotherapy"},
+    "clinical.risk.homicidal": {"label": "Required on OAR: Homicidal Risk", "form": "OAR Psychotherapy"},
+    "clinical.sessions_begin_date": {"label": "Required on OAR: Begin Date of Sessions", "form": "OAR Psychotherapy"},
+    "clinical.sessions_count": {"label": "Required on OAR: Number of Sessions", "form": "OAR Psychotherapy"},
+    "clinical.sessions_frequency": {"label": "Required on OAR: Frequency", "form": "OAR Psychotherapy"},
+    "clinical.first_contact_date": {"label": "Required on Timeliness: Date of First Contact", "form": "Timeliness"},
+    "clinical.first_contact_time": {"label": "Required on Timeliness: Time of First Contact", "form": "Timeliness"},
+    "provider.name_license": {"label": "Required: Provider Name/Licensure", "form": "OAR and Timeliness"},
+    "provider.phone": {"label": "Required on OAR: Provider Phone", "form": "OAR Psychotherapy"},
+    "provider.date": {"label": "Required: Provider/Form Date", "form": "OAR and Timeliness"}
+  }
+}

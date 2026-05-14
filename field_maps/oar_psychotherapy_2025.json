@@ -1,0 +1,743 @@
+{
+  "page_size": "letter",
+  "font": {
+    "name": "Helvetica",
+    "size": 8
+  },
+  "marks": [
+    {
+      "key": "initial_request",
+      "page": 0,
+      "x": 104.0,
+      "y": 637.2,
+      "size": 4.6
+    },
+    {
+      "key": "continuing_request",
+      "page": 0,
+      "x": 174.2,
+      "y": 637.2,
+      "size": 4.6
+    },
+    {
+      "key": "gender_male",
+      "page": 0,
+      "x": 355.0,
+      "y": 608.0,
+      "size": 4.6
+    },
+    {
+      "key": "gender_female",
+      "page": 0,
+      "x": 376.0,
+      "y": 608.0,
+      "size": 4.6
+    },
+    {
+      "key": "gender_other",
+      "page": 0,
+      "x": 394.0,
+      "y": 608.0,
+      "size": 4.6
+    },
+    {
+      "key": "living_homeless",
+      "page": 0,
+      "x": 112.5,
+      "y": 575.0,
+      "size": 4.6
+    },
+    {
+      "key": "living_alone",
+      "page": 0,
+      "x": 165.6,
+      "y": 575.0,
+      "size": 4.6
+    },
+    {
+      "key": "living_ilf",
+      "page": 0,
+      "x": 200.9,
+      "y": 575.0,
+      "size": 4.6
+    },
+    {
+      "key": "living_board_care",
+      "page": 0,
+      "x": 226.7,
+      "y": 575.0,
+      "size": 4.6
+    },
+    {
+      "key": "living_snf",
+      "page": 0,
+      "x": 258.0,
+      "y": 575.0,
+      "size": 4.6
+    },
+    {
+      "key": "living_other",
+      "page": 0,
+      "x": 289.3,
+      "y": 575.0,
+      "size": 4.6
+    },
+    {
+      "key": "regional_center_yes",
+      "page": 0,
+      "x": 183.0,
+      "y": 558.8,
+      "size": 4.6
+    },
+    {
+      "key": "regional_center_no",
+      "page": 0,
+      "x": 211.5,
+      "y": 558.8,
+      "size": 4.6
+    },
+    {
+      "key": "employment_employed",
+      "page": 0,
+      "x": 190.6,
+      "y": 542.6,
+      "size": 4.6
+    },
+    {
+      "key": "employment_student",
+      "page": 0,
+      "x": 243.6,
+      "y": 542.6,
+      "size": 4.6
+    },
+    {
+      "key": "employment_homemaker",
+      "page": 0,
+      "x": 287.0,
+      "y": 542.6,
+      "size": 4.6
+    },
+    {
+      "key": "employment_retired",
+      "page": 0,
+      "x": 349.5,
+      "y": 542.6,
+      "size": 4.6
+    },
+    {
+      "key": "employment_unemployed",
+      "page": 0,
+      "x": 391.1,
+      "y": 542.6,
+      "size": 4.6
+    },
+    {
+      "key": "employment_seeking_work",
+      "page": 0,
+      "x": 189.9,
+      "y": 527.4,
+      "size": 4.6
+    },
+    {
+      "key": "employment_not_in_labor_force",
+      "page": 0,
+      "x": 259.9,
+      "y": 527.4,
+      "size": 4.6
+    },
+    {
+      "key": "employment_unknown",
+      "page": 0,
+      "x": 346.6,
+      "y": 527.4,
+      "size": 4.6
+    },
+    {
+      "key": "employment_other",
+      "page": 0,
+      "x": 396.7,
+      "y": 527.4,
+      "size": 4.6
+    },
+    {
+      "key": "justice_na",
+      "page": 0,
+      "x": 160.3,
+      "y": 511.6,
+      "size": 4.6
+    },
+    {
+      "key": "justice_yes",
+      "page": 0,
+      "x": 187.5,
+      "y": 511.6,
+      "size": 4.6
+    },
+    {
+      "key": "cfwb_yes",
+      "page": 0,
+      "x": 328.0,
+      "y": 495.4,
+      "size": 4.6
+    },
+    {
+      "key": "cfwb_no",
+      "page": 0,
+      "x": 356.8,
+      "y": 495.4,
+      "size": 4.6
+    },
+    {
+      "key": "problem_list_reviewed",
+      "page": 0,
+      "x": 101.8,
+      "y": 360.0,
+      "size": 4.6
+    },
+    {
+      "key": "problem_list_no_changes",
+      "page": 0,
+      "x": 191.0,
+      "y": 360.0,
+      "size": 4.6
+    },
+    {
+      "key": "impairment_social_yes",
+      "page": 0,
+      "x": 455.0,
+      "y": 315.1,
+      "size": 4.4
+    },
+    {
+      "key": "impairment_social_no",
+      "page": 0,
+      "x": 529.0,
+      "y": 315.1,
+      "size": 4.4
+    },
+    {
+      "key": "impairment_occupational_yes",
+      "page": 0,
+      "x": 455.0,
+      "y": 299.8,
+      "size": 4.4
+    },
+    {
+      "key": "impairment_occupational_no",
+      "page": 0,
+      "x": 529.0,
+      "y": 299.8,
+      "size": 4.4
+    },
+    {
+      "key": "impairment_other_yes",
+      "page": 0,
+      "x": 455.0,
+      "y": 284.7,
+      "size": 4.4
+    },
+    {
+      "key": "impairment_other_no",
+      "page": 0,
+      "x": 529.0,
+      "y": 284.7,
+      "size": 4.4
+    },
+    {
+      "key": "deterioration_yes",
+      "page": 0,
+      "x": 455.0,
+      "y": 269.3,
+      "size": 4.4
+    },
+    {
+      "key": "deterioration_no",
+      "page": 0,
+      "x": 529.0,
+      "y": 269.3,
+      "size": 4.4
+    },
+    {
+      "key": "developmental_yes",
+      "page": 0,
+      "x": 455.0,
+      "y": 253.9,
+      "size": 4.4
+    },
+    {
+      "key": "developmental_no",
+      "page": 0,
+      "x": 529.0,
+      "y": 253.9,
+      "size": 4.4
+    },
+    {
+      "key": "trauma_yes",
+      "page": 0,
+      "x": 189.8,
+      "y": 216.6,
+      "size": 4.6
+    },
+    {
+      "key": "trauma_no",
+      "page": 0,
+      "x": 220.5,
+      "y": 216.6,
+      "size": 4.6
+    },
+    {
+      "key": "substance_no",
+      "page": 0,
+      "x": 117.0,
+      "y": 187.7,
+      "size": 4.6
+    },
+    {
+      "key": "substance_history",
+      "page": 0,
+      "x": 143.5,
+      "y": 187.7,
+      "size": 4.6
+    },
+    {
+      "key": "substance_current",
+      "page": 0,
+      "x": 186.8,
+      "y": 187.7,
+      "size": 4.6
+    },
+    {
+      "key": "suicidal_no",
+      "page": 0,
+      "x": 222.4,
+      "y": 155.1,
+      "size": 4.6
+    },
+    {
+      "key": "suicidal_ideation",
+      "page": 0,
+      "x": 250.8,
+      "y": 155.1,
+      "size": 4.6
+    },
+    {
+      "key": "suicidal_plan",
+      "page": 0,
+      "x": 297.5,
+      "y": 155.1,
+      "size": 4.6
+    },
+    {
+      "key": "suicidal_intent",
+      "page": 0,
+      "x": 331.0,
+      "y": 155.1,
+      "size": 4.6
+    },
+    {
+      "key": "suicidal_history_of_harm",
+      "page": 0,
+      "x": 368.4,
+      "y": 155.1,
+      "size": 4.6
+    },
+    {
+      "key": "homicidal_no",
+      "page": 0,
+      "x": 224.8,
+      "y": 139.3,
+      "size": 4.6
+    },
+    {
+      "key": "homicidal_ideation",
+      "page": 0,
+      "x": 253.2,
+      "y": 139.3,
+      "size": 4.6
+    },
+    {
+      "key": "homicidal_plan",
+      "page": 0,
+      "x": 298.2,
+      "y": 139.3,
+      "size": 4.6
+    },
+    {
+      "key": "homicidal_intent",
+      "page": 0,
+      "x": 333.5,
+      "y": 139.3,
+      "size": 4.6
+    },
+    {
+      "key": "homicidal_history_of_harm",
+      "page": 0,
+      "x": 368.6,
+      "y": 139.3,
+      "size": 4.6
+    },
+    {
+      "key": "no_medications",
+      "page": 0,
+      "x": 42.2,
+      "y": 54.2,
+      "size": 4.6
+    },
+    {
+      "key": "interpreter_no",
+      "page": 1,
+      "x": 197.2,
+      "y": 655.2,
+      "size": 4.6
+    },
+    {
+      "key": "interpreter_yes",
+      "page": 1,
+      "x": 221.0,
+      "y": 655.2,
+      "size": 4.6
+    },
+    {
+      "key": "waive_verbal_notification",
+      "page": 1,
+      "x": 42.8,
+      "y": 280.7,
+      "size": 4.6
+    }
+  ],
+  "text": [
+    {
+      "key": "client.full_name",
+      "page": 0,
+      "x": 101.5,
+      "y": 607.2,
+      "size": 8,
+      "bold": true,
+      "max_chars": 44,
+      "max_width_points": 213.19,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "client.age",
+      "page": 0,
+      "x": 446.0,
+      "y": 607.2,
+      "size": 8,
+      "max_chars": 8,
+      "max_width_points": 45.43,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "client.dob",
+      "page": 0,
+      "x": 525.0,
+      "y": 607.2,
+      "size": 8,
+      "max_chars": 10,
+      "max_width_points": 52.04,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "client.ethnicity",
+      "page": 0,
+      "x": 112.0,
+      "y": 590.8,
+      "size": 7,
+      "max_chars": 49,
+      "max_width_points": 202.87,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "insurance.medi_cal_cin",
+      "page": 0,
+      "x": 373.0,
+      "y": 590.8,
+      "size": 8,
+      "max_chars": 42,
+      "max_width_points": 204.3,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "client.living_with",
+      "page": 0,
+      "x": 377.0,
+      "y": 574.0,
+      "size": 8,
+      "max_chars": 41,
+      "max_width_points": 201.09,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "literal": "N/A",
+      "page": 0,
+      "x": 285.0,
+      "y": 511.0,
+      "size": 8,
+      "max_chars": 12,
+      "max_width_points": 64.0,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.justice_system_involvement_explain",
+      "page": 0,
+      "x": 280.0,
+      "y": 508.8,
+      "size": 7.5,
+      "max_chars": 72,
+      "max_width_points": 292.0,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.cfwb_psw",
+      "page": 0,
+      "x": 165.0,
+      "y": 478.8,
+      "size": 7.5,
+      "max_chars": 95,
+      "max_width_points": 410.0,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.cws_history",
+      "page": 0,
+      "x": 205.0,
+      "y": 465.0,
+      "size": 7.5,
+      "max_chars": 85,
+      "max_width_points": 370.0,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.primary_diagnosis",
+      "page": 0,
+      "x": 222.0,
+      "y": 434.8,
+      "size": 8,
+      "bold": true,
+      "max_chars": 20,
+      "max_width_points": 110.47,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.icd_code",
+      "page": 0,
+      "x": 386.0,
+      "y": 434.8,
+      "size": 8,
+      "bold": true,
+      "max_chars": 39,
+      "max_width_points": 191.22,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.other_diagnoses",
+      "page": 0,
+      "x": 224.0,
+      "y": 418.6,
+      "size": 7.5,
+      "max_chars": 107,
+      "max_width_points": 353.24,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.current_symptoms",
+      "page": 0,
+      "x": 39.0,
+      "y": 379.2,
+      "size": 7.5,
+      "max_chars": 159,
+      "max_width_points": 537.55,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.problem_list_date",
+      "page": 0,
+      "x": 308.5,
+      "y": 359.2,
+      "size": 8,
+      "max_chars": 57,
+      "max_width_points": 269.14,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.significant_impairment",
+      "page": 0,
+      "x": 184.0,
+      "y": 231.5,
+      "size": 7.4,
+      "max_chars": 120,
+      "max_width_points": 393.68,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.trauma_history",
+      "page": 0,
+      "x": 108.0,
+      "y": 202.2,
+      "size": 7.4,
+      "max_chars": 141,
+      "max_width_points": 469.46,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.drugs_of_choice",
+      "page": 0,
+      "x": 322.0,
+      "y": 187.0,
+      "size": 7.5,
+      "max_chars": 77,
+      "max_width_points": 255.18,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.substance_use_impact",
+      "page": 0,
+      "x": 275.0,
+      "y": 169.8,
+      "size": 7.5,
+      "max_chars": 90,
+      "max_width_points": 302.1,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.medication_1_name",
+      "page": 0,
+      "x": 60.0,
+      "y": 94.0,
+      "size": 7.5,
+      "max_chars": 40,
+      "max_width_points": 125.0,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.medication_1_dosage",
+      "page": 0,
+      "x": 191.6,
+      "y": 94.0,
+      "size": 7.5,
+      "max_chars": 36,
+      "max_width_points": 120.0,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.medication_2_name",
+      "page": 0,
+      "x": 320.5,
+      "y": 94.0,
+      "size": 7.5,
+      "max_chars": 40,
+      "max_width_points": 135.0,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.medication_2_dosage",
+      "page": 0,
+      "x": 461.6,
+      "y": 94.0,
+      "size": 7.5,
+      "max_chars": 36,
+      "max_width_points": 115.0,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.interventions",
+      "page": 1,
+      "x": 187.0,
+      "y": 730.4,
+      "size": 7.4,
+      "max_chars": 119,
+      "max_width_points": 390.54,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.interpreter_language",
+      "page": 1,
+      "x": 278.0,
+      "y": 652.5,
+      "size": 7.5,
+      "max_chars": 58,
+      "max_width_points": 240.0,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.sessions_begin_date",
+      "page": 1,
+      "x": 224.0,
+      "y": 586.5,
+      "size": 8,
+      "max_chars": 19,
+      "max_width_points": 102.24,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.sessions_count",
+      "page": 1,
+      "x": 344.0,
+      "y": 586.5,
+      "size": 8,
+      "max_chars": 13,
+      "max_width_points": 72.36,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "clinical.sessions_frequency",
+      "page": 1,
+      "x": 402.0,
+      "y": 586.5,
+      "size": 8,
+      "max_chars": 36,
+      "max_width_points": 177.48,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "provider.name_license",
+      "page": 1,
+      "x": 119.0,
+      "y": 356.2,
+      "size": 8,
+      "max_chars": 100,
+      "max_width_points": 457.72,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "provider.phone",
+      "page": 1,
+      "x": 79.0,
+      "y": 339.8,
+      "size": 8,
+      "max_chars": 74,
+      "max_width_points": 317.92,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "provider.fax",
+      "page": 1,
+      "x": 238.0,
+      "y": 339.8,
+      "size": 8,
+      "max_chars": 36,
+      "max_width_points": 155.0,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "provider.date",
+      "page": 1,
+      "x": 431.0,
+      "y": 316.5,
+      "size": 8,
+      "max_chars": 26,
+      "max_width_points": 145.26,
+      "fit_method": "measure_rendered_width"
+    },
+    {
+      "key": "provider.group_practice_name",
+      "page": 1,
+      "x": 205.0,
+      "y": 296.0,
+      "size": 8,
+      "max_chars": 86,
+      "max_width_points": 370.0,
+      "fit_method": "measure_rendered_width"
+    }
+  ]
+}

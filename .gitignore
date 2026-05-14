@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Build outputs
+build/
+build-onefile/
+dist/
+dist-onefile/
+*.spec.bak
+*.zip
+*.exe
+
+# Local/generated client packets and outputs
+Client Packet*.zip
+* filled.pdf
+* flattened.pdf
+* complete*.pdf
+FormFillerOutputs/
+outputs/
+generated/
+patient_input.json
+
+# Personal/local assets
+assets/provider_signature.png
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
