@@ -1589,17 +1589,9 @@ class MainWindow(QMainWindow):
         root_layout = QVBoxLayout(root)
 
         button_row = QHBoxLayout()
-        for label, handler in [
-            ("Copy ChatGPT Prompt", self.copy_prompt),
-            ("Paste Extracted Text", self.paste_extracted_text),
-            ("Load JSON", self.load_json),
-            ("Save JSON", self.save_json),
-            ("Export Packet ZIP", self.export_packet_zip),
-            ("Generate PDFs", self.generate),
-        ]:
-            button = QPushButton(label)
-            button.clicked.connect(handler)
-            button_row.addWidget(button)
+        generate_button = QPushButton("Generate PDFs")
+        generate_button.clicked.connect(self.generate)
+        button_row.addWidget(generate_button)
         button_row.addStretch(1)
         root_layout.addLayout(button_row)
 
@@ -1672,25 +1664,7 @@ class MainWindow(QMainWindow):
                 self.widgets[key] = widget
                 self.connect_field_signals(key, widget)
 
-        attachments_header = QLabel("Source files for packet export")
-        attachments_header.setStyleSheet("font-weight: 700; font-size: 15px; margin-top: 10px;")
-        form.addRow(attachments_header)
-        attachment_box = QWidget()
-        attachment_layout = QVBoxLayout(attachment_box)
-        attachment_layout.setContentsMargins(0, 0, 0, 0)
-        self.attachment_list = QListWidget()
-        self.attachment_list.addItems([str(path) for path in self.data.get("attachments", {}).get("source_files", [])])
-        attachment_layout.addWidget(self.attachment_list)
-        attachment_buttons = QHBoxLayout()
-        add_files_button = QPushButton("Add Files")
-        remove_files_button = QPushButton("Remove Selected")
-        attachment_buttons.addWidget(add_files_button)
-        attachment_buttons.addWidget(remove_files_button)
-        attachment_buttons.addStretch(1)
-        attachment_layout.addLayout(attachment_buttons)
-        add_files_button.clicked.connect(self.add_source_files)
-        remove_files_button.clicked.connect(self.remove_selected_source_files)
-        form.addRow("Files/images/PDFs", attachment_box)
+        self.attachment_list = None
 
         scroll.setWidget(content)
         root_layout.addWidget(scroll, 1)
@@ -2037,7 +2011,7 @@ class MainWindow(QMainWindow):
             set_nested(data, key, value)
         data.setdefault("attachments", {})["source_files"] = [
             self.attachment_list.item(i).text() for i in range(self.attachment_list.count())
-        ]
+        ] if self.attachment_list is not None else data.get("attachments", {}).get("source_files", [])
         diagnosis = get_nested(data, "clinical.primary_diagnosis", "")
         diagnosis_code = diagnosis_code_from_text(diagnosis)
         if diagnosis_code:
@@ -2070,8 +2044,9 @@ class MainWindow(QMainWindow):
                 widget.setPlainText(str(value))
             else:
                 widget.setText(str(value))
-        self.attachment_list.clear()
-        self.attachment_list.addItems([str(path) for path in data.get("attachments", {}).get("source_files", [])])
+        if self.attachment_list is not None:
+            self.attachment_list.clear()
+            self.attachment_list.addItems([str(path) for path in data.get("attachments", {}).get("source_files", [])])
         self.sync_icd_from_diagnosis()
         self.update_all_fit_counters()
         self.update_required_highlights()
