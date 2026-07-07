@@ -398,10 +398,38 @@
       "size": 4.6
     },
     {
-      "key": "waive_verbal_notification",
+      "key": "group_therapy",
       "page": 1,
-      "x": 42.8,
-      "y": 280.7,
+      "x": 43.0,
+      "y": 715.0,
+      "size": 4.6
+    },
+    {
+      "key": "tcm_medical",
+      "page": 1,
+      "x": 43.0,
+      "y": 433.0,
+      "size": 4.6
+    },
+    {
+      "key": "tcm_social",
+      "page": 1,
+      "x": 43.0,
+      "y": 418.0,
+      "size": 4.6
+    },
+    {
+      "key": "tcm_educational",
+      "page": 1,
+      "x": 43.0,
+      "y": 402.5,
+      "size": 4.6
+    },
+    {
+      "key": "tcm_other",
+      "page": 1,
+      "x": 43.0,
+      "y": 387.5,
       "size": 4.6
     }
   ],
@@ -468,24 +496,15 @@
       "fit_method": "measure_rendered_width"
     },
     {
-      "literal": "N/A",
+      "key": "clinical.justice_system_involvement_explain",
       "page": 0,
       "x": 285.0,
       "y": 511.0,
-      "size": 8,
-      "max_chars": 12,
-      "max_width_points": 64.0,
-      "fit_method": "measure_rendered_width"
-    },
-    {
-      "key": "clinical.justice_system_involvement_explain",
-      "page": 0,
-      "x": 280.0,
-      "y": 508.8,
       "size": 7.5,
-      "max_chars": 72,
-      "max_width_points": 292.0,
-      "fit_method": "measure_rendered_width"
+      "max_chars": 70,
+      "max_width_points": 288.0,
+      "fit_method": "measure_rendered_width",
+      "field_name": "Justice System Involvement - If Yes explain"
     },
     {
       "key": "clinical.cfwb_psw",
@@ -652,42 +671,46 @@
     {
       "key": "clinical.interpreter_language",
       "page": 1,
-      "x": 278.0,
+      "x": 298.0,
       "y": 652.5,
       "size": 7.5,
-      "max_chars": 58,
-      "max_width_points": 240.0,
-      "fit_method": "measure_rendered_width"
+      "max_chars": 55,
+      "max_width_points": 274.0,
+      "fit_method": "measure_rendered_width",
+      "field_name": "Interpreter language"
     },
     {
       "key": "clinical.sessions_begin_date",
       "page": 1,
-      "x": 224.0,
+      "x": 220.0,
       "y": 586.5,
       "size": 8,
       "max_chars": 19,
-      "max_width_points": 102.24,
-      "fit_method": "measure_rendered_width"
+      "max_width_points": 98.0,
+      "fit_method": "measure_rendered_width",
+      "field_name": "Begin Date of Sessions - Psychotherapy"
     },
     {
       "key": "clinical.sessions_count",
       "page": 1,
-      "x": 344.0,
+      "x": 324.0,
       "y": 586.5,
       "size": 8,
-      "max_chars": 13,
-      "max_width_points": 72.36,
-      "fit_method": "measure_rendered_width"
+      "max_chars": 12,
+      "max_width_points": 68.0,
+      "fit_method": "measure_rendered_width",
+      "field_name": "Number of Sessions - Psychotherapy"
     },
     {
       "key": "clinical.sessions_frequency",
       "page": 1,
-      "x": 402.0,
+      "x": 399.0,
       "y": 586.5,
       "size": 8,
-      "max_chars": 36,
-      "max_width_points": 177.48,
-      "fit_method": "measure_rendered_width"
+      "max_chars": 35,
+      "max_width_points": 173.0,
+      "fit_method": "measure_rendered_width",
+      "field_name": "Frequency - Psychotherapy"
     },
     {
       "key": "provider.name_license",
@@ -712,12 +735,13 @@
     {
       "key": "provider.fax",
       "page": 1,
-      "x": 238.0,
+      "x": 424.0,
       "y": 339.8,
       "size": 8,
-      "max_chars": 36,
-      "max_width_points": 155.0,
-      "fit_method": "measure_rendered_width"
+      "max_chars": 33,
+      "max_width_points": 149.0,
+      "fit_method": "measure_rendered_width",
+      "field_name": "Fax"
     },
     {
       "key": "provider.date",
@@ -732,12 +756,222 @@
     {
       "key": "provider.group_practice_name",
       "page": 1,
-      "x": 205.0,
+      "x": 183.0,
       "y": 296.0,
       "size": 8,
       "max_chars": 86,
-      "max_width_points": 370.0,
-      "fit_method": "measure_rendered_width"
+      "max_width_points": 390.0,
+      "fit_method": "measure_rendered_width",
+      "field_name": "If Group Practice, Name of Group"
+    },
+    {
+      "key": "clinical.group_participants",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Group Therapy Number of participants",
+      "page": 1,
+      "x": 214.0,
+      "y": 714.0,
+      "size": 8,
+      "max_chars": 18,
+      "max_width_points": 82.0
+    },
+    {
+      "key": "clinical.group_topic",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Group Topic",
+      "page": 1,
+      "x": 358.0,
+      "y": 714.0,
+      "size": 8,
+      "max_chars": 45,
+      "max_width_points": 214.0
+    },
+    {
+      "key": "clinical.group_sessions_begin_date",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Begin Date of Sessions - Group Psychotherapy",
+      "page": 1,
+      "x": 220.0,
+      "y": 557.0,
+      "size": 8,
+      "max_chars": 19,
+      "max_width_points": 98.0
+    },
+    {
+      "key": "clinical.group_sessions_count",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Number of Sessions - Group Psychotherapy",
+      "page": 1,
+      "x": 324.0,
+      "y": 557.0,
+      "size": 8,
+      "max_chars": 12,
+      "max_width_points": 68.0
+    },
+    {
+      "key": "clinical.group_sessions_frequency",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Frequency - Group Psychotherapy",
+      "page": 1,
+      "x": 399.0,
+      "y": 557.0,
+      "size": 8,
+      "max_chars": 35,
+      "max_width_points": 173.0
+    },
+    {
+      "key": "clinical.other_service_name",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Other Service",
+      "page": 1,
+      "x": 68.0,
+      "y": 529.0,
+      "size": 8,
+      "max_chars": 30,
+      "max_width_points": 145.0
+    },
+    {
+      "key": "clinical.other_sessions_begin_date",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Begin Date of Sessions - Other",
+      "page": 1,
+      "x": 220.0,
+      "y": 527.5,
+      "size": 8,
+      "max_chars": 19,
+      "max_width_points": 98.0
+    },
+    {
+      "key": "clinical.other_sessions_count",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Number of Sessions - Other",
+      "page": 1,
+      "x": 324.0,
+      "y": 527.5,
+      "size": 8,
+      "max_chars": 12,
+      "max_width_points": 68.0
+    },
+    {
+      "key": "clinical.other_sessions_frequency",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Frequency - Other",
+      "page": 1,
+      "x": 399.0,
+      "y": 527.5,
+      "size": 8,
+      "max_chars": 35,
+      "max_width_points": 173.0
+    },
+    {
+      "key": "clinical.team_conference_begin_date",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Begin Date of Sessions - Team Conference",
+      "page": 1,
+      "x": 220.0,
+      "y": 498.5,
+      "size": 8,
+      "max_chars": 19,
+      "max_width_points": 98.0
+    },
+    {
+      "key": "clinical.team_conference_units",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Number of Sessions - Team Conference",
+      "page": 1,
+      "x": 324.0,
+      "y": 498.5,
+      "size": 8,
+      "max_chars": 12,
+      "max_width_points": 68.0
+    },
+    {
+      "key": "clinical.team_conference_frequency",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Frequency - Team Conference",
+      "page": 1,
+      "x": 399.0,
+      "y": 498.5,
+      "size": 8,
+      "max_chars": 35,
+      "max_width_points": 173.0
+    },
+    {
+      "key": "clinical.tcm_begin_date",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Begin Date of Sessions - Targeted Case Management",
+      "page": 1,
+      "x": 220.0,
+      "y": 469.0,
+      "size": 8,
+      "max_chars": 19,
+      "max_width_points": 98.0
+    },
+    {
+      "key": "clinical.tcm_units",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Number of Sessions - Targeted Case Management",
+      "page": 1,
+      "x": 324.0,
+      "y": 469.0,
+      "size": 8,
+      "max_chars": 12,
+      "max_width_points": 68.0
+    },
+    {
+      "key": "clinical.tcm_frequency",
+      "fit_method": "measure_rendered_width",
+      "field_name": "Frequency - Targeted Case Management",
+      "page": 1,
+      "x": 399.0,
+      "y": 469.0,
+      "size": 8,
+      "max_chars": 35,
+      "max_width_points": 173.0
+    },
+    {
+      "key": "clinical.tcm_medical_explain",
+      "fit_method": "measure_rendered_width",
+      "field_name": "TCM Medical Explain",
+      "page": 1,
+      "x": 124.0,
+      "y": 433.0,
+      "size": 8,
+      "max_chars": 95,
+      "max_width_points": 448.0
+    },
+    {
+      "key": "clinical.tcm_social_explain",
+      "fit_method": "measure_rendered_width",
+      "field_name": "TCM Social Explain",
+      "page": 1,
+      "x": 118.0,
+      "y": 417.5,
+      "size": 8,
+      "max_chars": 98,
+      "max_width_points": 454.0
+    },
+    {
+      "key": "clinical.tcm_educational_explain",
+      "fit_method": "measure_rendered_width",
+      "field_name": "TCM Educational Explain",
+      "page": 1,
+      "x": 139.0,
+      "y": 402.0,
+      "size": 8,
+      "max_chars": 93,
+      "max_width_points": 433.0
+    },
+    {
+      "key": "clinical.tcm_other_explain",
+      "fit_method": "measure_rendered_width",
+      "field_name": "TCM Other Services Explain",
+      "page": 1,
+      "x": 153.0,
+      "y": 386.0,
+      "size": 8,
+      "max_chars": 89,
+      "max_width_points": 419.0
     }
   ]
 }

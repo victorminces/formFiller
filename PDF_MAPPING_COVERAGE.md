@@ -9,10 +9,10 @@ Current direct path:
 ## Status Summary
 
 - Demographic: app fields that appear on the current demographic form are mapped through `field_maps/demographic_2024.json` and `fill_demographic()`.
-- OAR Psychotherapy: app fields that appear on the current OAR form are mapped through `field_maps/oar_psychotherapy_2025.json` and `fill_oar_flattened()`.
+- OAR Psychotherapy 7.1.26: app fields that appear on the current OAR form are mapped through `field_maps/oar_psychotherapy_2025.json` and `fill_oar_flattened()`.
 - Timeliness: app fields that appear on the current timeliness form are mapped in `fill_timeliness()`. This works, but it is still hardcoded in Python rather than a JSON map.
 - Output/source-file fields are workflow controls, not PDF fields.
-- Group therapy, TCM, and other-service UI fields were removed because they are not part of the current desired workflow.
+- Group therapy, other service, team conference, and TCM fields are available behind the app's "Show additional OAR service fields" button.
 
 ## Demographic Form Coverage
 
@@ -132,6 +132,26 @@ Mapped clinical fields:
 | `clinical.sessions_begin_date` | Psychotherapy begin date |
 | `clinical.sessions_count` | Psychotherapy number of sessions |
 | `clinical.sessions_frequency` | Psychotherapy frequency |
+| `clinical.group_therapy` | Group therapy checkbox |
+| `clinical.group_participants` | Group participants |
+| `clinical.group_topic` | Group topic |
+| `clinical.group_sessions_begin_date` | Group therapy begin date |
+| `clinical.group_sessions_count` | Group therapy sessions |
+| `clinical.group_sessions_frequency` | Group therapy frequency |
+| `clinical.other_service_name` | Other service name |
+| `clinical.other_sessions_begin_date` | Other service begin date |
+| `clinical.other_sessions_count` | Other service sessions |
+| `clinical.other_sessions_frequency` | Other service frequency |
+| `clinical.team_conference_begin_date` | Team conference begin date |
+| `clinical.team_conference_units` | Team conference units |
+| `clinical.team_conference_frequency` | Team conference frequency |
+| `clinical.tcm_begin_date` | TCM begin date |
+| `clinical.tcm_units` | TCM units |
+| `clinical.tcm_frequency` | TCM frequency |
+| `clinical.tcm_medical` / `clinical.tcm_medical_explain` | TCM medical checkbox and explanation |
+| `clinical.tcm_social` / `clinical.tcm_social_explain` | TCM social checkbox and explanation |
+| `clinical.tcm_educational` / `clinical.tcm_educational_explain` | TCM educational checkbox and explanation |
+| `clinical.tcm_other` / `clinical.tcm_other_explain` | TCM other-services checkbox and explanation |
 
 Mapped provider fields:
 
@@ -143,7 +163,6 @@ Mapped provider fields:
 | `paths.signature_image` | Provider signature image |
 | `provider.date` | Provider date |
 | `provider.group_practice_name` | Group practice name |
-| `provider.waive_verbal_notification` | Waive verbal notification checkbox |
 
 Intentional OAR limitation:
 

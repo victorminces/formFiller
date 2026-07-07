@@ -431,7 +431,18 @@ def should_draw_mark(item, data):
         "no_medications": (bool(clinical.get("no_medications")) or clinical.get("medications", "").lower().startswith("no")) and not has_medications,
         "interpreter_no": clinical.get("interpreter_needed", "No").lower() == "no" and not clinical.get("interpreter_needed_yes"),
         "interpreter_yes": clinical.get("interpreter_needed", "").lower() == "yes" or bool(clinical.get("interpreter_needed_yes")),
-        "waive_verbal_notification": bool(data.get("provider", {}).get("waive_verbal_notification")),
+        "group_therapy": any(str(clinical.get(key, "")).strip() for key in (
+            "group_therapy",
+            "group_participants",
+            "group_topic",
+            "group_sessions_begin_date",
+            "group_sessions_count",
+            "group_sessions_frequency",
+        )),
+        "tcm_medical": bool(clinical.get("tcm_medical")) or bool(str(clinical.get("tcm_medical_explain", "")).strip()),
+        "tcm_social": bool(clinical.get("tcm_social")) or bool(str(clinical.get("tcm_social_explain", "")).strip()),
+        "tcm_educational": bool(clinical.get("tcm_educational")) or bool(str(clinical.get("tcm_educational_explain", "")).strip()),
+        "tcm_other": bool(clinical.get("tcm_other")) or bool(str(clinical.get("tcm_other_explain", "")).strip()),
     }
     return rules.get(key, False)
 

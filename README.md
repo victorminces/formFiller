@@ -27,7 +27,7 @@ data into the example JSON file unless the workspace is appropriate for PHI.
   Maps normalized data keys to the Demographic form's fillable field names.
 
 - `field_maps/oar_psychotherapy_2025.json`  
-  Maps normalized data keys to exact page coordinates for the flattened OAR overlay.
+  Maps normalized data keys to exact page coordinates for the flattened OAR 7.1.26 overlay.
 
 - `render_pdf_screenshot.js`  
   Renders a PDF to a PNG screenshot using Edge/Chromium so the final output can be
@@ -41,6 +41,7 @@ data into the example JSON file unless the workspace is appropriate for PHI.
 1. Put the blank form templates somewhere accessible.
    - Demographic form PDF
    - OAR Psychotherapy PDF
+   - Psychotherapy Timeliness Record PDF
 
 2. Gather client source material.
    - Images of IDs/cards/messages
@@ -120,6 +121,7 @@ Extract and normalize these categories from all source files.
 - Begin date
 - Number of sessions
 - Frequency
+- Optional group therapy / other service / team conference / TCM details when those OAR rows apply
 
 ## Why The OAR Is Flattened
 
@@ -139,9 +141,9 @@ This creates a visually stable PDF for fax/mail/upload workflows.
 
 ## Text-Fit Strategy
 
-The field map includes a `max_chars` value for constrained fields. The program
-will truncate long text with `...`, but the preferred workflow is to provide
-condensed clinical wording in the input JSON.
+The field map includes measured width and example capacity values for constrained
+fields. Do not rely on hard truncation. Provide condensed clinical wording in the
+input JSON, then render and inspect the PDF.
 
 Good OAR wording is short:
 

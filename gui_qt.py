@@ -954,6 +954,29 @@ YES_TEXT_FIELDS = {
     "clinical.access_closure": ("clinical.access_closed", "clinical.closure_explain", "Access closure explanation if other"),
 }
 
+OPTIONAL_OAR_SERVICE_FIELDS = [
+    ("clinical.group_therapy", "Group therapy", "bool"),
+    ("clinical.group_participants", "Group participants", "text"),
+    ("clinical.group_topic", "Group topic", "text"),
+    ("clinical.group_sessions_begin_date", "Group therapy begin date", "date"),
+    ("clinical.group_sessions_count", "Group therapy sessions", "text"),
+    ("clinical.group_sessions_frequency", "Group therapy frequency", "text"),
+    ("clinical.other_service_name", "Other service", "text"),
+    ("clinical.other_sessions_begin_date", "Other service begin date", "date"),
+    ("clinical.other_sessions_count", "Other service sessions", "text"),
+    ("clinical.other_sessions_frequency", "Other service frequency", "text"),
+    ("clinical.team_conference_begin_date", "Team conference begin date", "date"),
+    ("clinical.team_conference_units", "Team conference units", "text"),
+    ("clinical.team_conference_frequency", "Team conference frequency", "text"),
+    ("clinical.tcm_begin_date", "TCM begin date", "date"),
+    ("clinical.tcm_units", "TCM units", "text"),
+    ("clinical.tcm_frequency", "TCM frequency", "text"),
+    ("clinical.tcm_medical", "TCM medical focus", "yes_text"),
+    ("clinical.tcm_social", "TCM social focus", "yes_text"),
+    ("clinical.tcm_educational", "TCM educational focus", "yes_text"),
+    ("clinical.tcm_other", "TCM other services focus", "yes_text"),
+]
+
 FIELDS = [
     ("Output", [
         ("paths.signature_image", "OAR signature image", "file"),
@@ -1094,7 +1117,6 @@ FIELDS = [
         ("provider.fax", "Provider fax", "text"),
         ("provider.date", "Provider/form date", "date"),
         ("provider.group_practice_name", "Group practice name", "text"),
-        ("provider.waive_verbal_notification", "Waive verbal notification", "bool"),
     ]),
 ]
 
@@ -1191,6 +1213,26 @@ Interpreter needed:
 Sessions begin date:
 Number of sessions:
 Frequency:
+Group therapy:
+Group participants:
+Group topic:
+Group therapy begin date:
+Group therapy sessions:
+Group therapy frequency:
+Other service:
+Other service begin date:
+Other service sessions:
+Other service frequency:
+Team conference begin date:
+Team conference units:
+Team conference frequency:
+TCM begin date:
+TCM units:
+TCM frequency:
+TCM medical focus:
+TCM social focus:
+TCM educational focus:
+TCM other services focus:
 Referral source:
 First contact date:
 First contact time:
@@ -1289,6 +1331,26 @@ LABEL_TO_FIELD = {
     "number of sessions": "clinical.sessions_count",
     "sessions": "clinical.sessions_count",
     "frequency": "clinical.sessions_frequency",
+    "group therapy": "clinical.group_therapy",
+    "group participants": "clinical.group_participants",
+    "group topic": "clinical.group_topic",
+    "group therapy begin date": "clinical.group_sessions_begin_date",
+    "group therapy sessions": "clinical.group_sessions_count",
+    "group therapy frequency": "clinical.group_sessions_frequency",
+    "other service": "clinical.other_service_name",
+    "other service begin date": "clinical.other_sessions_begin_date",
+    "other service sessions": "clinical.other_sessions_count",
+    "other service frequency": "clinical.other_sessions_frequency",
+    "team conference begin date": "clinical.team_conference_begin_date",
+    "team conference units": "clinical.team_conference_units",
+    "team conference frequency": "clinical.team_conference_frequency",
+    "tcm begin date": "clinical.tcm_begin_date",
+    "tcm units": "clinical.tcm_units",
+    "tcm frequency": "clinical.tcm_frequency",
+    "tcm medical focus": "clinical.tcm_medical_explain",
+    "tcm social focus": "clinical.tcm_social_explain",
+    "tcm educational focus": "clinical.tcm_educational_explain",
+    "tcm other services focus": "clinical.tcm_other_explain",
     "referral source": "clinical.referral_source",
     "first contact date": "clinical.first_contact_date",
     "first contact time": "clinical.first_contact_time",
@@ -1601,68 +1663,88 @@ class MainWindow(QMainWindow):
         form = QFormLayout(content)
         form.setLabelAlignment(Qt.AlignLeft)
 
+        def add_field(target_form, key, label, kind):
+            if kind == "yes_text":
+                yes_key, text_key, _ = YES_TEXT_FIELDS[key]
+                widget = make_yes_text_control(get_nested(self.data, yes_key, False), get_nested(self.data, text_key, ""))
+                target_form.addRow(label, widget)
+                self.widgets[yes_key] = widget.yes_box
+                self.widgets[text_key] = widget.detail
+                self.connect_field_signals(yes_key, widget.yes_box)
+                self.connect_field_signals(text_key, widget.detail)
+                return
+            if kind == "bool":
+                widget = QCheckBox()
+                widget.setChecked(bool(get_nested(self.data, key, False)))
+                target_form.addRow(label, widget)
+            else:
+                row = QWidget()
+                row_layout = QHBoxLayout(row)
+                row_layout.setContentsMargins(0, 0, 0, 0)
+                if key in BUTTON_CHOICES:
+                    edit = make_button_choice(BUTTON_CHOICES[key], get_nested(self.data, key, ""))
+                elif kind == "check_choice" or key in CHECK_CHOICES:
+                    edit = make_checkbox_choice(CHECK_CHOICES[key], get_nested(self.data, key, ""))
+                elif kind == "checkgroup":
+                    edit = make_checkbox_group(CHECKBOX_GROUPS[key], get_nested(self.data, key, []))
+                elif kind == "date" or key in DATE_FIELDS:
+                    edit = make_date_picker(get_nested(self.data, key, ""))
+                elif key in CHOICES:
+                    edit = FormComboBox()
+                    edit.setEditable(key not in NON_EDITABLE_CHOICE_FIELDS)
+                    edit.addItems(CHOICES[key])
+                    edit.setStyleSheet(COMBO_POPUP_STYLE)
+                    edit.setMaxVisibleItems(20)
+                    set_combo_text(edit, get_nested(self.data, key, ""))
+                elif key in EXTENDED_TEXT_FIELDS:
+                    edit = QPlainTextEdit(str(get_nested(self.data, key, "")))
+                    edit.setFixedHeight(72)
+                    edit.setPlaceholderText("Raw clinical text; the AI will shorten it to the measured PDF field when generating forms.")
+                else:
+                    edit = QLineEdit(str(get_nested(self.data, key, "")))
+                row_layout.addWidget(edit, 1)
+                if key in EXTENDED_TEXT_FIELDS:
+                    counter = QLabel()
+                    counter.setMinimumWidth(120)
+                    counter.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+                    row_layout.addWidget(counter)
+                    self.fit_counters[key] = counter
+                if kind == "file":
+                    browse = QPushButton("Browse")
+                    browse.clicked.connect(lambda _, e=edit: self.pick_file(e))
+                    row_layout.addWidget(browse)
+                elif kind == "folder":
+                    browse = QPushButton("Browse")
+                    browse.clicked.connect(lambda _, e=edit: self.pick_folder(e))
+                    row_layout.addWidget(browse)
+                widget = edit
+                target_form.addRow(label, row)
+            self.widgets[key] = widget
+            self.connect_field_signals(key, widget)
+
         for section, fields in FIELDS:
             header = QLabel(section)
             header.setStyleSheet("font-weight: 700; font-size: 15px; margin-top: 10px;")
             form.addRow(header)
             for key, label, kind in fields:
-                if kind == "yes_text":
-                    yes_key, text_key, _ = YES_TEXT_FIELDS[key]
-                    widget = make_yes_text_control(get_nested(self.data, yes_key, False), get_nested(self.data, text_key, ""))
-                    form.addRow(label, widget)
-                    self.widgets[yes_key] = widget.yes_box
-                    self.widgets[text_key] = widget.detail
-                    self.connect_field_signals(yes_key, widget.yes_box)
-                    self.connect_field_signals(text_key, widget.detail)
-                    continue
-                if kind == "bool":
-                    widget = QCheckBox()
-                    widget.setChecked(bool(get_nested(self.data, key, False)))
-                    form.addRow(label, widget)
-                else:
-                    row = QWidget()
-                    row_layout = QHBoxLayout(row)
-                    row_layout.setContentsMargins(0, 0, 0, 0)
-                    if key in BUTTON_CHOICES:
-                        edit = make_button_choice(BUTTON_CHOICES[key], get_nested(self.data, key, ""))
-                    elif kind == "check_choice" or key in CHECK_CHOICES:
-                        edit = make_checkbox_choice(CHECK_CHOICES[key], get_nested(self.data, key, ""))
-                    elif kind == "checkgroup":
-                        edit = make_checkbox_group(CHECKBOX_GROUPS[key], get_nested(self.data, key, []))
-                    elif kind == "date" or key in DATE_FIELDS:
-                        edit = make_date_picker(get_nested(self.data, key, ""))
-                    elif key in CHOICES:
-                        edit = FormComboBox()
-                        edit.setEditable(key not in NON_EDITABLE_CHOICE_FIELDS)
-                        edit.addItems(CHOICES[key])
-                        edit.setStyleSheet(COMBO_POPUP_STYLE)
-                        edit.setMaxVisibleItems(20)
-                        set_combo_text(edit, get_nested(self.data, key, ""))
-                    elif key in EXTENDED_TEXT_FIELDS:
-                        edit = QPlainTextEdit(str(get_nested(self.data, key, "")))
-                        edit.setFixedHeight(72)
-                        edit.setPlaceholderText("Raw clinical text; the AI will shorten it to the measured PDF field when generating forms.")
-                    else:
-                        edit = QLineEdit(str(get_nested(self.data, key, "")))
-                    row_layout.addWidget(edit, 1)
-                    if key in EXTENDED_TEXT_FIELDS:
-                        counter = QLabel()
-                        counter.setMinimumWidth(120)
-                        counter.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
-                        row_layout.addWidget(counter)
-                        self.fit_counters[key] = counter
-                    if kind == "file":
-                        browse = QPushButton("Browse")
-                        browse.clicked.connect(lambda _, e=edit: self.pick_file(e))
-                        row_layout.addWidget(browse)
-                    elif kind == "folder":
-                        browse = QPushButton("Browse")
-                        browse.clicked.connect(lambda _, e=edit: self.pick_folder(e))
-                        row_layout.addWidget(browse)
-                    widget = edit
-                    form.addRow(label, row)
-                self.widgets[key] = widget
-                self.connect_field_signals(key, widget)
+                add_field(form, key, label, kind)
+            if section == "OAR - Services":
+                toggle = QPushButton("Show additional OAR service fields")
+                toggle.setCheckable(True)
+                form.addRow(toggle)
+                optional_box = QWidget()
+                optional_form = QFormLayout(optional_box)
+                optional_form.setLabelAlignment(Qt.AlignLeft)
+                optional_box.setVisible(False)
+                for key, label, kind in OPTIONAL_OAR_SERVICE_FIELDS:
+                    add_field(optional_form, key, label, kind)
+                toggle.toggled.connect(optional_box.setVisible)
+                toggle.toggled.connect(
+                    lambda checked, button=toggle: button.setText(
+                        "Hide additional OAR service fields" if checked else "Show additional OAR service fields"
+                    )
+                )
+                form.addRow(optional_box)
 
         self.attachment_list = None
 
